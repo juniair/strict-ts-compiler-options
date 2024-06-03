@@ -2,6 +2,7 @@
   "compilerOptions": {
     "target": "es5", // Specify ECMAScript target version
     "lib": ["dom", "dom.iterable", "esnext"], // List of library files to be included in the compilation
+    "baseUrl": "./src",
     "allowUnreachableCode": false, // These warnings are only about code which is provably unreachable due to the use of JavaScript syntax
     "allowUnusedLabels": false, // Labels are very rare in JavaScript and typically indicate an attempt to write an object literal
     "allowJs": true, // Allow JavaScript files to be compiled
@@ -17,14 +18,17 @@
     "noEmit": true, // Do not emit output (meaning do not compile code, only perform type checking)
     "jsx": "react", // Support JSX in .tsx files
     "sourceMap": true, // Generate corrresponding .map file
-    "declaration": true, // Generate corresponding .d.ts file
+    "declaration": true, // Generate corresponding .d.ts file(default path : ./tpyes)
     "noUnusedLocals": true, // Report errors on unused locals
     "noUnusedParameters": true, // Report errors on unused parameters
-    "noImplicitReturns": false, // When enabled, TypeScript will check all code paths in a function to ensure they return a value
-    "noImplicitOverride": false, // When working with classes which use inheritance
+    "noImplicitAny": true,
+    "noImplicitOverride": true, // When working with classes which use inheritance
+    "noImplicitReturns": true, // When enabled, TypeScript will check all code paths in a function to ensure they return a value
+    "noImplicitThis": true,
     "incremental": true, // Enable incremental compilation by reading/writing information from prior compilations to a file on disk
     "noFallthroughCasesInSwitch": true, // Report errors for fallthrough cases in switch statement
-    "strictFunctionTypes": true
+    "strictFunctionTypes": true,
+    "downlevelIteration": true
   },
   "include": [
     "src/**/*" // *** The files TypeScript should type check ***
